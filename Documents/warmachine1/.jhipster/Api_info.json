@@ -1,0 +1,59 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "api_id",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "project",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "method",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "base_url",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 5,
+            "fieldName": "fragment",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 6,
+            "fieldName": "environment",
+            "fieldType": "Env",
+            "fieldValues": "QA,PROD,STAGE",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 7,
+            "fieldName": "req_body",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20151105105917",
+    "dto": "no",
+    "pagination": "pagination"
+}

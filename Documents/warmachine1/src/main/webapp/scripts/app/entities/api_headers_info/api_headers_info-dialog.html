@@ -1,0 +1,68 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myApi_headers_infoLabel">Create or edit a Api_headers_info</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="api_headers_info.id" readonly />
+        </div>
+        <div class="form-group">
+            <label for="field_api_id">Api_id</label>
+            <input type="text" class="form-control" name="api_id" id="field_api_id"
+                    ng-model="api_headers_info.api_id"
+                    required />
+            <div ng-show="editForm.api_id.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.api_id.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="field_headers">Headers</label>
+            <input type="text" class="form-control" name="headers" id="field_headers"
+                    ng-model="api_headers_info.headers"
+                    required />
+            <div ng-show="editForm.headers.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.headers.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="field_default_value">Default_value</label>
+            <input type="text" class="form-control" name="default_value" id="field_default_value"
+                    ng-model="api_headers_info.default_value"
+                    required />
+            <div ng-show="editForm.default_value.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.default_value.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="field_api_info">api_info</label>
+            <select class="form-control" id="field_api_info" name="api_info" ng-model="api_headers_info.api_info" ng-options="api_info as api_info.api_id for api_info in api_infos track by api_info.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || editForm.$submitted" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,55 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "api_info",
+            "otherEntityName": "api_info",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "api_id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "api_id",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "parameter",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "usage_type",
+            "fieldType": "Parameter_usage_type",
+            "fieldValues": "OPTIONAL,MANDATORY",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "default_value",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 5,
+            "fieldName": "type",
+            "fieldType": "Parameter_type",
+            "fieldValues": "STR,NUM,BOOL",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20151105120225",
+    "dto": "no",
+    "pagination": "pagination"
+}

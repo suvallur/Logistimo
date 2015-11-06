@@ -1,0 +1,100 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myApi_infoLabel">Create or edit a Api_info</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="api_info.id" readonly />
+        </div>
+        <div class="form-group">
+            <label for="field_api_id">Api_id</label>
+            <input type="text" class="form-control" name="api_id" id="field_api_id"
+                    ng-model="api_info.api_id"
+                    required />
+            <div ng-show="editForm.api_id.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.api_id.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="field_project">Project</label>
+            <input type="text" class="form-control" name="project" id="field_project"
+                    ng-model="api_info.project"
+                    required />
+            <div ng-show="editForm.project.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.project.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="field_method">Method</label>
+            <input type="text" class="form-control" name="method" id="field_method"
+                    ng-model="api_info.method"
+                    required />
+            <div ng-show="editForm.method.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.method.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="field_base_url">Base_url</label>
+            <input type="text" class="form-control" name="base_url" id="field_base_url"
+                    ng-model="api_info.base_url"
+                    required />
+            <div ng-show="editForm.base_url.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.base_url.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="field_fragment">Fragment</label>
+            <input type="text" class="form-control" name="fragment" id="field_fragment"
+                    ng-model="api_info.fragment"
+                     />
+        </div>
+        <div class="form-group">
+            <label for="field_environment">Environment</label>
+            <select class="form-control" name="environment" ng-model="api_info.environment" id="field_environment" required>
+                <option value="QA">QA</option>
+                <option value="PROD">PROD</option>
+                <option value="STAGE">STAGE</option>
+            </select>
+            <div ng-show="editForm.environment.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.environment.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="field_req_body">Req_body</label>
+            <input type="text" class="form-control" name="req_body" id="field_req_body"
+                    ng-model="api_info.req_body"
+                     />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || editForm.$submitted" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

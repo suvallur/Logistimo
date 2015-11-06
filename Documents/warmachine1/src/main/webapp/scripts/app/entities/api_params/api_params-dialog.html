@@ -1,0 +1,89 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myApi_paramsLabel">Create or edit a Api_params</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="api_params.id" readonly />
+        </div>
+        <div class="form-group">
+            <label for="field_api_id">Api_id</label>
+            <input type="text" class="form-control" name="api_id" id="field_api_id"
+                    ng-model="api_params.api_id"
+                    required />
+            <div ng-show="editForm.api_id.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.api_id.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="field_parameter">Parameter</label>
+            <input type="text" class="form-control" name="parameter" id="field_parameter"
+                    ng-model="api_params.parameter"
+                    required />
+            <div ng-show="editForm.parameter.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.parameter.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="field_usage_type">Usage_type</label>
+            <select class="form-control" name="usage_type" ng-model="api_params.usage_type" id="field_usage_type" required>
+                <option value="OPTIONAL">OPTIONAL</option>
+                <option value="MANDATORY">MANDATORY</option>
+            </select>
+            <div ng-show="editForm.usage_type.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.usage_type.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="field_default_value">Default_value</label>
+            <input type="text" class="form-control" name="default_value" id="field_default_value"
+                    ng-model="api_params.default_value"
+                     />
+        </div>
+        <div class="form-group">
+            <label for="field_type">Type</label>
+            <select class="form-control" name="type" ng-model="api_params.type" id="field_type" required>
+                <option value="STR">STR</option>
+                <option value="NUM">NUM</option>
+                <option value="BOOL">BOOL</option>
+            </select>
+            <div ng-show="editForm.type.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.type.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="field_api_info">api_info</label>
+            <select class="form-control" id="field_api_info" name="api_info" ng-model="api_params.api_info" ng-options="api_info as api_info.api_id for api_info in api_infos track by api_info.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || editForm.$submitted" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

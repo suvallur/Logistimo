@@ -1,0 +1,78 @@
+
+<div>
+    <h2><span>Api_info</span> {{api_info.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Field</th>
+                <th>Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span>Api_id</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{api_info.api_id}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Project</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{api_info.project}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Method</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{api_info.method}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Base_url</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{api_info.base_url}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Fragment</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{api_info.fragment}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Environment</span>
+                </td>
+                <td>
+                    <span class="form-control-static" translate="{{'warmachine1App.Env.' + api_info.environment}}">{{api_info.environment}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Req_body</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{api_info.req_body}}</span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+</div>
